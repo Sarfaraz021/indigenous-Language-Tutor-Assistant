@@ -28,7 +28,7 @@ class RAGAssistant:
             self.relative_path, self.filename)
         # default_documents_directory = r"D:\DanyAIApp\code\data\dummy.txt"
         self.initialize_retriever(self.default_documents_directory)
-        self.llm = ChatOpenAI(model="gpt-4-o", temperature=0.7)
+        self.llm = ChatOpenAI(model="gpt-4o", temperature=0.7)
 
     def load_env_variables(self):
         """Loads environment variables from .env file."""
@@ -39,10 +39,10 @@ class RAGAssistant:
 
     def setup_prompt_template(self):
         """Sets up the prompt template for chat completions."""
-        self.template
+        # self.template
         self.prompt_template = PromptTemplate(
             input_variables=["history", "context", "question"],
-            template=self.template,
+            template=template,
         )
 
     def initialize_retriever(self, directory_path):
